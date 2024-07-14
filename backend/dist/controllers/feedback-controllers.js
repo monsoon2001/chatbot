@@ -172,7 +172,6 @@ export const getStats = async (req, res) => {
       const sentimentStats = {
           Positive: 0,
           Negative: 0,
-          Neutral: 0,
       };
 
       // Aggregate feedback statistics
@@ -187,7 +186,6 @@ export const getStats = async (req, res) => {
           // Increment sentiment counts, handle null safely
           if (feedback.sentiment === "Positive") sentimentStats.Positive++;
           if (feedback.sentiment === "Negative") sentimentStats.Negative++;
-          if (feedback.sentiment === "Neutral") sentimentStats.Neutral++;
       });
 
       res.status(200).json({ ratings: ratingStats, sentiments: sentimentStats });

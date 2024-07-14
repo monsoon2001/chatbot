@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Chat from "./pages/Chat";
 
+
 import { useAuth } from "./context/context";
 
 import styles from "./App.module.css";
@@ -26,6 +27,7 @@ function App() {
 				<Route path='/' element={<Home />} />
 				<Route path='/login' element={<Login />} />
 				<Route path='/signup' element={<Signup />} />
+				
 			</Routes>
 		);
 	}

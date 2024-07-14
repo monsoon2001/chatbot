@@ -384,8 +384,6 @@ import ChatLoading from "../components/chat/ChatLoading";
 import { useAuth } from "../context/context";
 import SpinnerOverlay from "../components/shared/SpinnerOverlay";
 import toast from "react-hot-toast";
-import { Canvas } from "@react-three/fiber";
-import SpaceBackground from "../components/home/SpaceBackground";
 
 type Message = {
   role: "user" | "assistant";
@@ -492,7 +490,7 @@ const Chat = () => {
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:5001/sentiment", {
+      const response = await fetch("http://localhost:5003/prediction", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -505,7 +503,7 @@ const Chat = () => {
       }
 
       const result = await response.json();
-      console.log(result);
+      console.log(result.prediction);
 
       // Reset feedback state
       setIsFeedbackMode(false);
@@ -515,7 +513,7 @@ const Chat = () => {
 
       const sendFeedback = {
         comment: feedbackContent,
-        sentiment: result,
+        sentiment: result.prediction,
         rating: rating,
         email: email,
       };

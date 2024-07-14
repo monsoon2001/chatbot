@@ -49,7 +49,7 @@ export const postChatRequest = async (message: string) => {
 	console.log(message);
 	// const predict = "Based on your symptoms, I believe you are having Malaria and I would advice you Take prescribed antimalarial medications, rest, and manage fever. Seek medical attention for severe cases."
 	// try {
-	// 	const response = await axios.post("/chat/new", { message, predict });
+	// 	const response = await axios.post("/chat/new", { message });
 	// 	console.log(response);
 	// 	if (response.status !== 200) {
 	// 		throw new Error();
